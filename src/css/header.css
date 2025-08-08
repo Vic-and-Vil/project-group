@@ -329,3 +329,14 @@ position: relative;
 
 
 
+.header-scroll-button:hover,
+.hero-scroll:hover,
+.nav-list-item-link:hover,
+.mobile-menu-open-btn:hover,
+.mob-menu-btn:hover {
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
