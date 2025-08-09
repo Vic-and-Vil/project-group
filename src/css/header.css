@@ -7,14 +7,14 @@
 .container-header {
     display: flex;
     align-items: center;
-    height: 72px;
-    width: 375px;
+    max-height: 72px;
+    max-width: 375px;
 }
 
 @media (min-width: 768px) {
     .container-header {
         justify-content: space-between;
-        width: 705px;
+        max-width: 705px;
         padding: 0;
     }
 }
@@ -23,14 +23,14 @@
     .container-header {
         justify-content: space-between;
         padding: 0;
-        width: 1312px;
+        max-width: 1312px;
     }
 }
 
 /* ===== BURGER BUTTON ===== */
  .mobile-menu-open-btn {
-    width: 32px;
-    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
     background: transparent;
     border: none;
     padding: 0;
@@ -74,25 +74,28 @@
 .mob-menu.is-open {
     position: fixed;
     top: 0;
-    right: 375px;
+    /* right: 375px; */
+    right: 0;
+    transform: translateX(0);
     height: 100%;
     width: 100%;
     background: #fff;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     transition: transform 250ms ease-in-out;
 }
 
 .mob-menu-container-w-logo {
     padding: 0 20px;
     overflow-x: hidden;
-    height: 69.86px;
+    max-height: 69.86px;
     display: flex;
     align-items: center;
 }
 
- .mob-menu-btn.js-close-menu{
-    display: none;
-    fill:#080c09
+ .hiden-close{
+    opacity: 0;
+        visibility: hidden;
+
 } 
 
 .mob-menu-container-second {
@@ -100,6 +103,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
+    padding-top: 16px;
 }
 
 .mob-menu-page {
@@ -108,7 +112,6 @@
 
 .mob-menu-btn {
     position: absolute;
-    top: 20px;
     right: 20px;
     background: transparent;
     border: none;
@@ -122,11 +125,6 @@
     stroke-width: 2.5px;
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* .mob-menu-btn:hover .mob-menu-close-icon,
-.mob-menu-btn:focus .mob-menu-close-icon {
-    stroke: #f00f0f;
-} */
 
 .mob-menu-list {
     display: flex;
@@ -165,12 +163,16 @@
 
 /*tablet menu*/
 @media (min-width: 768px) {
-    .mob-menu-container-w-logo{
+
+    .mob-menu-logo{
         display: none;
     }
 
-    .mob-menu-container-w-logo.mob-menu-btn{
-
+    .mob-menu-container-w-logo{
+position: absolute;
+min-width: 249px;
+top: -72px;
+right: 0px;
     }
 
     /* .mobile-menu-open-btn {
@@ -179,9 +181,8 @@
 
     .mob-menu-btn{
         top: 18.93px;
-        right: 64px;
-    width: 32px;
-    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
     background: transparent;
     border: none;
     padding: 0;
@@ -199,21 +200,17 @@
     } */
 
     .mob-menu.is-open{
-        width: 249px;
-        height: 321px;
+        max-width: 249px;
+        max-height: 321px;
         top: 72px;
-        right: 331px;
+        right: 31px;
     }
 
     .mob-menu-container{
-        width: 249px;
+        max-width: 249px;
     }
 
-    /* .mob-menu-container-w-logo{
-        display: none;
-    } */
-
-    .mob-menu-container-second{
+     .mob-menu-container-second{
         padding: 24px;
         display: flex;
         flex-direction: column;
@@ -230,8 +227,8 @@
         align-items: flex-end;
         justify-content: flex-end;
         flex-direction: column;
-        height: 273px;
-        width: 122px;
+        max-height: 273px;
+        max-width: 122px;
     }
 
     .nav-list-item{
@@ -303,8 +300,8 @@ position: relative;
     color: #fff;
     border-radius: 100px;
     padding: 8px 20px;
-    width: 129px;
-    height: 42px;
+    max-width: 129px;
+    max-height: 42px;
     box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
     background: #6b0609;
 }
@@ -312,8 +309,8 @@ position: relative;
 .header-scroll-button:hover,
 .header-scroll-button:focus {
     border-radius: 100px;
-    width: 129px;
-    height: 42px;
+    max-width: 129px;
+    max-height: 42px;
     box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
     background: #6b0609;
     opacity: 0.5;
@@ -333,10 +330,26 @@ position: relative;
 .hero-scroll:hover,
 .nav-list-item-link:hover,
 .mobile-menu-open-btn:hover,
-.mob-menu-btn:hover {
+.mob-menu-btn:hover,
+.header-scroll-button:focus,
+.hero-scroll:focus,
+.nav-list-item-link:focus,
+.mobile-menu-open-btn:focus,
+.mob-menu-btn:focus {
     cursor: pointer;
+    color: #A2A4A2;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+.hiden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.is-open {
+    opacity: 1;
+    visibility: visible;
 }

@@ -5,22 +5,28 @@
 
   openMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('is-open');
+    closeMenuBtn.classList.remove('hiden-close');
+    closeMenuBtn.classList.add('is-open');
+    openMenuBtn.classList.add('hiden')
   });
 
   closeMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('is-open');
+    openMenuBtn.classList.remove('hiden')
+    closeMenuBtn.classList.remove('is-open');
   });
-})();
-openMenuBtn.addEventListener('click', () => {
+
+  openMenuBtn.addEventListener('click', () => {
   mobileMenu.classList.add('is-open');
   document.body.style.overflow = 'hidden'; // додати
 });
 
-closeMenuBtn.addEventListener('click', () => {
+  closeMenuBtn.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
   document.body.style.overflow = ''; // додати
 });
-document.addEventListener('click', (e) => {
+    })();
+  document.addEventListener('click', (e) => {
   if (
     mobileMenu.classList.contains('is-open') &&
     !mobileMenu.contains(e.target) &&
@@ -42,3 +48,4 @@ document.querySelectorAll('.mob-menu-item-link').forEach(link => {
     document.body.style.overflow = '';
   });
 });
+
