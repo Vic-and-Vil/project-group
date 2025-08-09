@@ -86,7 +86,7 @@
 
 .mob-menu-container-w-logo {
     padding: 0 20px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     max-height: 69.86px;
     display: flex;
     align-items: center;
@@ -170,8 +170,8 @@
 
     .mob-menu-container-w-logo{
 position: absolute;
-min-width: 249px;
-top: -72px;
+/* min-width: 249px; */
+top: -53.07px;
 right: 0px;
     }
 
@@ -180,7 +180,7 @@ right: 0px;
     } */
 
     .mob-menu-btn{
-        top: 18.93px;
+        top: 0;
     max-width: 32px;
     max-height: 32px;
     background: transparent;
@@ -345,11 +345,12 @@ html {
 }
 
 .hiden {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .is-open {
-    opacity: 1;
+  opacity: 1;
     visibility: visible;
 }
+
